@@ -93,6 +93,15 @@ select {
     border-radius: 6px;
 }
 
+.clear-button {
+    background-color: #7a39e0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
 .table {
     width: 100%;
     border-collapse: collapse;
@@ -140,6 +149,17 @@ select {
 
 .total-row td {
     height: 30px;
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: flex-start; /* Opcional: Alinea al principio */
+    }
+
+    .records {
+        margin-left: 0; /* Elimina el margin-left en móvil */
+    }
 }
 /* FIN ESTILOS TABLA */
 

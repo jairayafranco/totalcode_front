@@ -53,7 +53,7 @@
           <label for="month" class="select-label-title"
             >Mes:
             <select id="month">
-              <option disabled selected>SELECCIONAR</option>
+              <option value="0" disabled selected>SELECCIONAR</option>
               <option value="1">ENERO</option>
               <option value="2">FEBRERO</option>
               <option value="3">MARZO</option>
@@ -68,15 +68,16 @@
               <option value="12">DICIEMBRE</option>
             </select>
           </label>
-          <label for="state" class="select-label-title"
+          <label for="status" class="select-label-title"
             >Estado:
-            <select id="state">
-              <option disabled selected>SELECCIONAR</option>
+            <select id="status">
+              <option value="0" disabled selected>SELECCIONAR</option>
               <option value="0">ABIERTAS</option>
               <option value="3">ENVIADAS</option>
               <option value="4">ENTREGADAS</option>
             </select>
           </label>
+          <button class="clear-button">Limpiar</button>
           <div class="records"></div>
         </div>
       </div>
