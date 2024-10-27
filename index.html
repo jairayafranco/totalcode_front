@@ -53,18 +53,31 @@
           <label for="month" class="select-label-title"
             >Mes:
             <select id="month">
-              <option>OCTUBRE</option>
-              <!-- Agregar más opciones aquí -->
+              <option disabled selected>SELECCIONAR</option>
+              <option value="1">ENERO</option>
+              <option value="2">FEBRERO</option>
+              <option value="3">MARZO</option>
+              <option value="4">ABRIL</option>
+              <option value="5">MAYO</option>
+              <option value="6">JUNIO</option>
+              <option value="7">JULIO</option>
+              <option value="8">AGOSTO</option>
+              <option value="9">SEPTIEMBRE</option>
+              <option value="10">OCTUBRE</option>
+              <option value="11">NOVIEMBRE</option>
+              <option value="12">DICIEMBRE</option>
             </select>
           </label>
           <label for="state" class="select-label-title"
             >Estado:
             <select id="state">
-              <option>ABIERTAS</option>
-              <!-- Agregar más opciones aquí -->
+              <option disabled selected>SELECCIONAR</option>
+              <option value="0">ABIERTAS</option>
+              <option value="3">ENVIADAS</option>
+              <option value="4">ENTREGADAS</option>
             </select>
           </label>
-          <div class="records">Registros (<strong>6</strong>)</div>
+          <div class="records"></div>
         </div>
       </div>
 
@@ -76,43 +89,7 @@
             <th>Monto ($ COP)</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Nombre de Cliente 1<br /><small>cliente1@correo.com</small></td>
-            <td>5</td>
-            <td>$700,000</td>
-          </tr>
-          <tr>
-            <td>Nombre de Cliente 2<br /><small>cliente2@correo.com</small></td>
-            <td>3</td>
-            <td>$550,000</td>
-          </tr>
-          <tr>
-            <td>Nombre de Cliente 3<br /><small>cliente3@correo.com</small></td>
-            <td>1</td>
-            <td>$500,000</td>
-          </tr>
-          <tr>
-            <td>Nombre de Cliente 4<br /><small>cliente4@correo.com</small></td>
-            <td>6</td>
-            <td>$150,000</td>
-          </tr>
-          <tr>
-            <td>Nombre de Cliente 5<br /><small>cliente5@correo.com</small></td>
-            <td>2</td>
-            <td>$80,000</td>
-          </tr>
-          <tr>
-            <td>Nombre de Cliente 6<br /><small>cliente6@correo.com</small></td>
-            <td>4</td>
-            <td>$15,000</td>
-          </tr>
-          <tr class="total-row">
-            <td>Total</td>
-            <td>21</td>
-            <td>$1,995,000</td>
-          </tr>
-        </tbody>
+        <tbody id="tableBody"></tbody>
       </table>
     </div>
 
