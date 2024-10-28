@@ -38,11 +38,21 @@ html {
     background-color: #FFFFFF;
     color: #333;
     padding: 10px 20px;
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+.btn-salir:hover {
+    background-color: #b13a3a;
+    color: #FFFFFF;
+}
+.btn-salir:hover svg {
+    fill: white;
+}
+#onOff {
+    width: 20px;
 }
 /* FIN ESTILOS NAVBAR */
 

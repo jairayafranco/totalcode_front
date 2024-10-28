@@ -30,8 +30,6 @@ $('#loginForm').submit(function (e) {
                 $('#username').val('');
                 $('#password').val('');
                 getOrders();
-            } else {
-                $('#loginMessage').text('Usuario o contraseña incorrectos').css('color', '#d32f2f');
             }
         },
         error: function (e) {
@@ -80,12 +78,12 @@ function getOrders(query = '') {
 
 // Actualizar la tabla
 function updateTable(orders) {
-    if (orders) {
+    if (orders.length) {
         const tableBody = $('#tableBody');
         tableBody.empty();
 
         orders.forEach(order => {
-            const row = `<tr>
+            const row = `<tr id="${order.order_num}">
                 <td>${order.first_name} ${order.last_name}<br /><small>${order.email}</small></td>
                 <td>${order.order_num}</td>
                 <td>${formatCurrency(order.total)}</td>
@@ -93,19 +91,21 @@ function updateTable(orders) {
             tableBody.append(row);
         });
 
-        const total = orders.reduce((acc, order) => acc + Number(order.total), 0);
+        const total = reduceOrders({ orders, field: 'total' });
+        const orders_num = reduceOrders({ orders, field: 'order_num' });
 
         const totalRow = `
             <tr class="total-row">
-                <td>Total</td>
-                <td>21</td>
+                <td style="text-align: right;">Total</td>
+                <td>${orders_num}</td>
                 <td>${formatCurrency(total)}</td>
             </tr>`;
         tableBody.append(totalRow);
 
         $('.records').text(`Registros (${orders.length})`)
     } else {
-        console.error('Error al cargar las órdenes');
+        $('#tableBody').html('<tr><td colspan="3" style="text-align: center;">No hay registros</td></tr>');
+        $('.records').text('Registros (0)')
     }
 }
 
@@ -144,4 +144,9 @@ function formatCurrency(value) {
         currency: 'COP',
         maximumFractionDigits: 0
     }).format(value);
+}
+
+// Reducir las órdenes
+function reduceOrders({ orders, field }) {
+    return orders.reduce((acc, order) => acc + Number(order[field]), 0);
 }
